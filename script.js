@@ -1,52 +1,44 @@
 //create array of cards
 const cardsArray = [
   {
-    name: "hamster",
-    img: "img/icons8-cute-hamster-80.png",
+    name: "adele",
+    img: "img/adele.jpg",
+    audio: "audioFiles/adele.mp3",
   },
   {
-    name: "pumpkin",
-    img: "img/icons8-cute-pumpkin-80.png",
+    name: "britney",
+    img: "img/britney.jpg",
+    audio: "audioFiles/britney.mp3",
   },
   {
-    name: "skull",
-    img: "img/icons8-cute-skull-80.png",
+    name: "queen",
+    img: "img/queen.jpg",
+    audio: "audioFiles/queen.mp3",
   },
   {
     name: "termite",
     img: "img/icons8-cute-termite-50.png",
-  },
-  {
-    name: "termiteLarge",
-    img: "img/icons8-cute-termite-96.png",
+    audio: "",
   },
   {
     name: "croissant",
     img: "img/icons8-kawaii-croissant-100.png",
+    audio: "",
   },
   {
     name: "cupcake",
     img: "img/icons8-kawaii-cupcake-90.png",
+    audio: "",
   },
   {
     name: "frenchFries",
     img: "img/icons8-kawaii-french-fries-100.png",
+    audio: "",
   },
   {
     name: "jam",
     img: "img/icons8-kawaii-jam-100.png",
-  },
-  {
-    name: "pizza",
-    img: "img/icons8-kawaii-pizza-100.png",
-  },
-  {
-    name: "shellfish",
-    img: "img/icons8-kawaii-shellfish-100.png",
-  },
-  {
-    name: "rabbit",
-    img: "img/icons8-year-of-rabbit-100.png",
+    audio: "",
   },
 ];
 
@@ -75,6 +67,7 @@ game.appendChild(grid);
 gameGrid.forEach((item) => {
   //create a card element (div), add css card class, use name dataset to set name
   const card = document.createElement('div')
+  card.setAttribute('data-audio', item.audio);
   card.classList.add('card')
   card.dataset.name = item.name
 
@@ -93,12 +86,14 @@ gameGrid.forEach((item) => {
   card.appendChild(back)
 })
 
-//add match css styling
+//add match css styling and pull audio
 const match = () => {
   var selected = document.querySelectorAll(".selected");
+  var audio = new Audio(selected[0].getAttribute("data-audio"));
   selected.forEach((card) => {
     card.classList.add("match");
   });
+  audio.play();
 };
 
 //reset guesses if not correctly matched
