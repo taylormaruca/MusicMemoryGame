@@ -1,16 +1,54 @@
-/* *,
+.container{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.panel{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+button{
+  font-family: 'Montserrat', sans-serif;
+}
+
+#panel{
+  padding: 0px 20px;
+  margin: 0px 10px 30px 10px;
+}
+
+*,
 *::before,
 *::after {
   box-sizing: border-box;
-} */
+}
 
 body {
   margin: 20px 0;
-  background: white;
 }
 
+.box{
+  margin: auto;
+  width: 85%;
+  padding: 20px;
+  background-image: linear-gradient(to right, #5B4FB0,#473AF0);
+  box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+}
+
+
 .grid {
-  max-width: 960px;
+  max-width: 640px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -22,13 +60,22 @@ body {
   transition: all 0.4s linear;
   transform-style: preserve-3d;
   margin: 5px;
+  border-radius: 5px;
+  height: 100px;
+  width: 140px;
+}
+
+/* .card, */
+.front:hover {
+  box-shadow: inset 0px 0px 0px 3px #5B4FB0;
+  box-sizing: border-box;
 }
 
 .card,
 .back,
 .front {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 140px;
 }
 
 .back,
@@ -37,23 +84,40 @@ body {
   backface-visibility: hidden;
 }
 
+/* front of card */
 .front {
-  background: white url('img/spotify.png') no-repeat center center /
+  background: #2E3D49 url('img/spotify.png') no-repeat center center /
     contain;
 }
 
 .back {
   transform: rotateY(180deg);
-  background-color: white;
+  /*background-color: white;*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
+/*flip card*/
 .selected {
   transform: rotateY(180deg);
 }
 
+/*when cards match*/
 .match .front {
-  background: white !important;
+   display: none !important;
+}
+
+/****Media Queries****/
+@media only screen and (min-width: 768px) {
+  .box{
+      width: 650px;
+      height: auto;
+  }
+ * .card {
+      display: inline-block;
+      min-width: 100px;
+      min-height: 100px;
+      cursor: pointer;
+  }
 }
