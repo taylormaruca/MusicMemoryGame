@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-        <div id="game"></div>
+        <div onclick="countClick(event)" >     
+        <div class="timer">Timer Here: </div>
+        <p>Move Counter: <a id="clicks">0</a></p>
+        <div id="game" onclick="startTimer(event)"></div>
         <button id="reset">Reset Game</button>
-
+        </div>
     <script src="script.js"></script>
 </body>
 </html>
