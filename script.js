@@ -1,28 +1,23 @@
 //create array of cards
 const cardsArray = [
   {
-    name: "hamster",
-    img: "img/icons8-cute-hamster-80.png",
-    audio: "",
+    name: "adele",
+    img: "img/adele.jpg",
+    audio: "audioFiles/adele.mp3",
   },
   {
-    name: "pumpkin",
-    img: "img/icons8-cute-pumpkin-80.png",
-    audio: "",
+    name: "britney",
+    img: "img/britney.jpg",
+    audio: "audioFiles/britney.mp3",
   },
   {
-    name: "skull",
-    img: "img/icons8-cute-skull-80.png",
+    name: "queen",
+    img: "img/queen.jpg",
     audio: "audioFiles/queen.mp3",
   },
   {
     name: "termite",
     img: "img/icons8-cute-termite-50.png",
-    audio: "",
-  },
-  {
-    name: "termiteLarge",
-    img: "img/icons8-cute-termite-96.png",
     audio: "",
   },
   {
@@ -45,26 +40,7 @@ const cardsArray = [
     img: "img/icons8-kawaii-jam-100.png",
     audio: "",
   },
-  {
-    name: "pizza",
-    img: "img/icons8-kawaii-pizza-100.png",
-    audio: "",
-  },
-  {
-    name: "shellfish",
-    img: "img/icons8-kawaii-shellfish-100.png",
-    audio: "",
-  },
-  {
-    name: "rabbit",
-    img: "img/icons8-year-of-rabbit-100.png",
-    audio: "",
-  },
 ];
-
-// function playMusic() {
-//   document.getElementById('queenAudio').play();
-// }
 
 //duplicate the array using concat and shuffle the array
 let gameGrid = cardsArray.concat(cardsArray).sort(function () {
