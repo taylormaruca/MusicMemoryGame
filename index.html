@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div onclick="countClick(event)">  
+    <div>  
     <div class = "container">
         <header>
             <h1> Music Memory Game</h1>
@@ -19,12 +19,13 @@
             <div class="moves" id="panel">MOVES <a id="clicks">0</a>
           </div>
     
-            <div class="timer" id="panel">TIME</div>
+            <div class="timer" id="panel">TIME  <input type="text" id="txt" /></div>
+           
     
-            <button id="reset" id="panel">RESTART</button>
+            <button id="reset" id="panel" onclick="resetCount();resetMoveCount(event)">RESTART</button>
         </section>
         <div class="box">
-            <div id="game" onclick="startTimer(event)"></div>
+            <div id="game" onclick="countClick(event); startTimer(event);"></div>
         </div>
       </div>
 

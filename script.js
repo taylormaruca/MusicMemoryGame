@@ -66,25 +66,25 @@ game.appendChild(grid);
 
 gameGrid.forEach((item) => {
   //create a card element (div), add css card class, use name dataset to set name
-  const card = document.createElement('div')
-  card.setAttribute('data-audio', item.audio);
-  card.classList.add('card')
-  card.dataset.name = item.name
+  const card = document.createElement("div");
+  card.setAttribute("data-audio", item.audio);
+  card.classList.add("card");
+  card.dataset.name = item.name;
 
   //create front of card and and front css class
-  const front = document.createElement('div')
-  front.classList.add('front')
+  const front = document.createElement("div");
+  front.classList.add("front");
 
   //create back of card and add back css class, back is shown when card is flipped
-  const back = document.createElement('div')
-  back.classList.add('back')
-  back.style.backgroundImage = `url(${item.img})`
+  const back = document.createElement("div");
+  back.classList.add("back");
+  back.style.backgroundImage = `url(${item.img})`;
 
   //append card to grid, and front and back to each card
-  grid.appendChild(card)
-  card.appendChild(front)
-  card.appendChild(back)
-})
+  grid.appendChild(card);
+  card.appendChild(front);
+  card.appendChild(back);
+});
 
 //add match css styling and pull audio
 const match = () => {
@@ -109,33 +109,49 @@ const resetGuesses = () => {
   });
 };
 
-// Count Moves
-var clicks = 0;
-
+// Move Counter  Var Setup 1 of 5
+let clicks = 0;
+// Move Counter  Var Setup 2 of 5
 function countClick() {
   clicks += 1;
   document.getElementById("clicks").innerHTML = clicks;
-};
-
-// Timer
-var second = 0, minute = 0;
-var timer = document.querySelector(".timer");
-var interval;
-
-function startTimer(){
-    interval = setInterval(function(){
-        timer.innerHTML = minute+"mins "+second+"secs";
-        second++;
-        if(second == 60){
-            minute++;
-            second = 0;
-        }
-        if(minute == 60){
-            hour++;
-            minute = 0;
-        }
-    },1000);
 }
+// Move Counter  Reset Var Setup 5 of 5
+function resetMoveCount() {
+  clicks = 0;
+  document.getElementById("clicks").innerHTML = "";
+}
+
+// Timer  Var Setup 1 of 5
+var c = 0;
+var t;
+var timer_is_on = 0;
+// Timer  function Setup 2 of 5
+function timedCount() {
+  document.getElementById("txt").value = c;
+  c = c + 1;
+  t = setTimeout("timedCount()", 1000);
+}
+
+function startTimer() {
+  if (!timer_is_on) {
+    timer_is_on = 1;
+    timedCount();
+  }
+}
+
+function stopCount() {
+  clearTimeout(t);
+  timer_is_on = 0;
+}
+// Timer  Var  Reset Var Setup 5 of 5
+function resetCount() {
+  clearTimeout(t);
+  c = 0;
+  timer_is_on = 0;
+  document.getElementById("txt").value = 0;
+}
+//
 
 //event listener for grid
 grid.addEventListener("click", function (event) {
@@ -145,7 +161,11 @@ grid.addEventListener("click", function (event) {
   //do not allow the grid section itself to be selected; only select divs inside the grid
   //do not allow same element to be clicked twice
   //do not allow already matched items to be selected
-  if (clicked.nodeName === "SECTION" || clicked === previousTarget || clicked.parentNode.classList.contains('selected')) {
+  if (
+    clicked.nodeName === "SECTION" ||
+    clicked === previousTarget ||
+    clicked.parentNode.classList.contains("selected")
+  ) {
     return;
   }
   //only allow 2 guesses at a time
@@ -154,14 +174,14 @@ grid.addEventListener("click", function (event) {
     if (count === 1) {
       //assign first guess
       //added parentNode because we're clicking an inner div and the data-name is still on outer div
-      firstGuess = clicked.parentNode.dataset.name
-      console.log(firstGuess)
-      clicked.parentNode.classList.add('selected')
+      firstGuess = clicked.parentNode.dataset.name;
+      console.log(firstGuess);
+      clicked.parentNode.classList.add("selected");
     } else {
       //assign second guess
-      secondGuess = clicked.parentNode.dataset.name
-      console.log(secondGuess)
-      clicked.parentNode.classList.add('selected')
+      secondGuess = clicked.parentNode.dataset.name;
+      console.log(secondGuess);
+      clicked.parentNode.classList.add("selected");
     }
     //if both guesses are not empty
     if (firstGuess !== "" && secondGuess !== "") {
