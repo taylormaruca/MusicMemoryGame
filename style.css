@@ -28,6 +28,10 @@ button{
   margin: 0px 10px 30px 10px;
 }
 
+#txt{
+  border-style: hidden;
+}
+
 *,
 *::before,
 *::after {
