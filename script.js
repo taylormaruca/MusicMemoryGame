@@ -18,27 +18,27 @@ const cardsArray = [
   {
     name: "bruno",
     img: "img/bruno-mars.png",
-    audio: "",
+    audio: "audioFiles/bruno.mp3",
   },
   {
     name: "nsync",
     img: "img/nsync.png",
-    audio: "",
+    audio: "audioFiles/nsync.mp3",
   },
   {
     name: "stevie",
     img: "img/stevie-wonder.png",
-    audio: "",
+    audio: "audioFiles/stevie.mp3",
   },
   {
     name: "taylor",
     img: "img/taylor-swift.png",
-    audio: "",
+    audio: "audioFiles/taylor.mp3",
   },
   {
     name: "weeknd",
     img: "img/weeknd.png",
-    audio: "",
+    audio: "audioFiles/weeknd.mp3",
   },
 ];
 

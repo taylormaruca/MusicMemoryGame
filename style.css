@@ -65,8 +65,8 @@ body {
   transform-style: preserve-3d;
   margin: 5px;
   border-radius: 5px;
-  height: 100px;
-  width: 140px;
+  /* height: 100px;
+  width: 140px; */
 }
 
 /* .card, */
