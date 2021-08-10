@@ -2,42 +2,42 @@
 const cardsArray = [
   {
     name: "adele",
-    img: "img/adele.jpg",
+    img: "img/adele.png",
     audio: "audioFiles/adele.mp3",
   },
   {
     name: "britney",
-    img: "img/britney.jpg",
+    img: "img/britney.png",
     audio: "audioFiles/britney.mp3",
   },
   {
     name: "queen",
-    img: "img/queen.jpg",
+    img: "img/queen.png",
     audio: "audioFiles/queen.mp3",
   },
   {
-    name: "termite",
-    img: "img/icons8-cute-termite-50.png",
+    name: "bruno",
+    img: "img/bruno-mars.png",
     audio: "",
   },
   {
-    name: "croissant",
-    img: "img/icons8-kawaii-croissant-100.png",
+    name: "nsync",
+    img: "img/nsync.png",
     audio: "",
   },
   {
-    name: "cupcake",
-    img: "img/icons8-kawaii-cupcake-90.png",
+    name: "stevie",
+    img: "img/stevie-wonder.png",
     audio: "",
   },
   {
-    name: "frenchFries",
-    img: "img/icons8-kawaii-french-fries-100.png",
+    name: "taylor",
+    img: "img/taylor-swift.png",
     audio: "",
   },
   {
-    name: "jam",
-    img: "img/icons8-kawaii-jam-100.png",
+    name: "weeknd",
+    img: "img/weeknd.png",
     audio: "",
   },
 ];
