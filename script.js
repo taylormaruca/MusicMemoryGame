@@ -18,27 +18,27 @@ const cardsArray = [
   {
     name: "termite",
     img: "img/icons8-cute-termite-50.png",
-    audio: "",
+    audio: "audioFiles/bruno.mp3",
   },
   {
     name: "croissant",
     img: "img/icons8-kawaii-croissant-100.png",
-    audio: "",
+    audio: "audioFiles/nsync.mp3",
   },
   {
     name: "cupcake",
     img: "img/icons8-kawaii-cupcake-90.png",
-    audio: "",
+    audio: "audioFiles/stevie.mp3",
   },
   {
     name: "frenchFries",
     img: "img/icons8-kawaii-french-fries-100.png",
-    audio: "",
+    audio: "audioFiles/taylor.mp3",
   },
   {
     name: "jam",
     img: "img/icons8-kawaii-jam-100.png",
-    audio: "",
+    audio: "audioFiles/weeknd.mp3",
   },
 ];
 
