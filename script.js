@@ -55,10 +55,10 @@ let previousTarget = null;
 let delay = 1200;
 
 //div with id of game is root for entire app
-const game = document.getElementById("game");
+let game = document.getElementById("game");
 
 //create a section element with the grid class (from css)
-const grid = document.createElement("section");
+let grid = document.createElement("section");
 grid.setAttribute("class", "grid");
 
 //append the grid section to the game div
@@ -72,11 +72,11 @@ gameGrid.forEach((item) => {
   card.dataset.name = item.name;
 
   //create front of card and and front css class
-  const front = document.createElement("div");
+  let front = document.createElement("div");
   front.classList.add("front");
 
   //create back of card and add back css class, back is shown when card is flipped
-  const back = document.createElement("div");
+  let back = document.createElement("div");
   back.classList.add("back");
   back.style.backgroundImage = `url(${item.img})`;
 
@@ -109,17 +109,16 @@ const resetGuesses = () => {
   });
 };
 
+function resetAll() {
+  window.location.reload(true)
+}
+
 // Move Counter  Var Setup 1 of 5
 let clicks = 0;
 // Move Counter  Var Setup 2 of 5
 function countClick() {
   clicks += 1;
   document.getElementById("clicks").innerHTML = clicks;
-}
-// Move Counter  Reset Var Setup 5 of 5
-function resetMoveCount() {
-  clicks = 0;
-  document.getElementById("clicks").innerHTML = "";
 }
 
 // Timer  Var Setup 1 of 5
@@ -144,14 +143,6 @@ function stopCount() {
   clearTimeout(t);
   timer_is_on = 0;
 }
-// Timer  Var  Reset Var Setup 5 of 5
-function resetCount() {
-  clearTimeout(t);
-  c = 0;
-  timer_is_on = 0;
-  document.getElementById("txt").value = 0;
-}
-//
 
 //event listener for grid
 grid.addEventListener("click", function (event) {
