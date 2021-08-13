@@ -1,34 +1,49 @@
-.container{
+body{
+  background-image: linear-gradient(to right, #473AF0, black);
+}
+
+.container {
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.panel {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  color: white;
+  width: 450px;
+  margin: 10px 5px 30px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-h1{
+.panel>div {
+  width: 33%;
+}
+
+button {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  background-color: #5B4FB0;
+  padding: 5px 15px;
+  color: white;
+  border-color: transparent;
+  border-radius: 10px;
 }
 
-.panel{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: normal;
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-}
-
-button{
-  font-family: 'Montserrat', sans-serif;
-}
-
-#panel{
-  padding: 0px 20px;
-  margin: 0px 10px 30px 10px;
-}
-
-#txt{
+input{
+  width: 25%;
+  background-color:transparent;
+  color: white;
   border-style: hidden;
 }
 
@@ -38,18 +53,13 @@ button{
   box-sizing: border-box;
 }
 
-body {
-  margin: 20px 0;
-}
-
-.box{
+.box {
   margin: auto;
   width: 85%;
   padding: 20px;
-  background-image: linear-gradient(to right, #5B4FB0,#473AF0);
+  background-image: linear-gradient(to right, #5B4FB0, #473AF0);
   box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
 }
-
 
 .grid {
   max-width: 640px;
@@ -64,12 +74,8 @@ body {
   transition: all 0.4s linear;
   transform-style: preserve-3d;
   margin: 5px;
-  border-radius: 5px;
-  /* height: 100px;
-  width: 140px; */
 }
 
-/* .card, */
 .front:hover {
   box-shadow: inset 0px 0px 0px 3px #5B4FB0;
   box-sizing: border-box;
@@ -80,6 +86,7 @@ body {
 .front {
   height: 100px;
   width: 140px;
+  border-radius: 8px;
 }
 
 .back,
@@ -88,16 +95,13 @@ body {
   backface-visibility: hidden;
 }
 
-/* front of card */
 .front {
-  background: #2E3D49 url('img/spotify.png') no-repeat center center /
-    contain;
+  background: #2E3D49 no-repeat center center / contain;
 }
 
 .back {
   transform: rotateY(180deg);
-  /*background-color: white;*/
-  background-size: contain;
+  /* background-size: contain; */
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -109,19 +113,20 @@ body {
 
 /*when cards match*/
 .match .front {
-   display: none !important;
+  display: none !important;
 }
 
 /****Media Queries****/
 @media only screen and (min-width: 768px) {
-  .box{
-      width: 650px;
-      height: auto;
+  .box {
+    width: 650px;
+    height: auto;
   }
- * .card {
-      display: inline-block;
-      min-width: 100px;
-      min-height: 100px;
-      cursor: pointer;
+
+  * .card {
+    height: 100px;
+    width: 140px;
+    display: inline-block;
+    cursor: pointer;
   }
 }
