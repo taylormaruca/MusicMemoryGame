@@ -34,6 +34,7 @@ h1 {
 button {
   font-family: 'Montserrat', sans-serif;
   background-color: #5B4FB0;
+  margin: 5px;
   padding: 5px 15px;
   color: white;
   border-color: transparent;
