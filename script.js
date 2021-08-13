@@ -191,3 +191,15 @@ grid.addEventListener("click", function (event) {
     previousTarget = clicked;
   }
 });
+
+// start game
+document.getElementById("start").addEventListener('click', startTimer);
+document.getElementById("game").addEventListener('click', startTimer);
+document.getElementById("game").addEventListener('click', countClick);
+document.getElementById("game").addEventListener('click', startGame);
+// document.getElementById("game").removeEventListener('click', startTimer);
+// Start Game button toggle / Unhide game grid
+function startGame() {
+  var sec = document.getElementById("game");
+  sec.style.display = 'block';
+}

@@ -16,15 +16,16 @@
         </header>
     
         <section class ="panel">
-            <div class="moves">MOVES<br><a id="clicks">0</a>
-          </div>
+
+            <div class="moves">MOVES<br><a id="clicks">0</a></div>
     
             <div class="timer">TIME<br><input type="text" id="txt"/></div>
            
-    
-            <button id="reset" onclick="resetCount();resetMoveCount(event);window.location.reload(true)">RESTART</button>
+            <button id="start" id="panel" onclick="startTimer(event);startGame();">START</button>
+            <button id="reset" onclick="resetAll()">RESTART</button>
         </section>
         <div class="box">
+            <div id="game" style="display:none"></div>
             <div id="game" onclick="countClick(event); startTimer(event);"></div>
         </div>
       </div>
@@ -32,3 +33,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
